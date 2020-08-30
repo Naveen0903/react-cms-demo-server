@@ -1,0 +1,74 @@
+if(value!=null || value != undefined || value!=""){
+      if(type=="text"){
+          let re = /[@_!#$%^&*()<>?/\|}{~:]/g;
+          let match = re.test(value);
+          if(!match){
+            actionValues["showMsg"] = false;
+            setActions(actionValues);
+            formData[name] = value;
+          }else{
+            actionValues["showMsg"] = true;
+            actionValues["msg"] = "Special characters not allowed";
+            setActions(actionValues);
+          }
+      }
+      else if(type=="email"){
+        let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let match = re.test(value);
+        if(match){
+          actionValues["showMsg"] = false;
+          setActions(actionValues);
+          formData[name] = value;
+        }else{
+          actionValues["showMsg"] = true;
+          actionValues["msg"] = "Invalid email format";
+          setActions(actionValues);
+        }
+      }else if(type=="url"){
+        let re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+        let match = re.test(value)
+        if(match){
+          actionValues["showMsg"] = false;
+          setActions(actionValues);
+          formData[name] = value;
+        }else{
+          actionValues["showMsg"] = true;
+          actionValues["msg"] = "Invalid url format";
+          setActions(actionValues);
+        }
+      }else if(type="tel"){
+        let re = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
+        let match = re.test(value);
+        if(match){
+          actionValues["showMsg"] = false;
+          setActions(actionValues);
+          formData[name] = value;
+        }else{
+          actionValues["showMsg"] = true;
+          actionValues["msg"] = "Invalid mobile format";
+          setActions(actionValues);
+        }
+      }else if(type=="password"){
+        if(value.length>8){
+          if(name=="password"){
+            formData[name] = value;
+          }else if(name=="retypePassword"){
+            if(formData["password"]==value){
+              actionValues["showMsg"]= true;
+              actionValues["msg"] = "Password matched";
+              setActions(actionValues);
+              formData[name] = value;
+            }else{
+              let actionValues = {...actions};
+              actionValues["showMsg"]= true;
+              actionValues["msg"] = "Password mismatch";
+              setActions(actionValues);
+            }
+          }
+        }else{
+          let actionValues = {...actions};
+              actionValues["showMsg"]= true;
+              actionValues["msg"] = "password cannot be less than 8 characters";
+              setActions(actionValues);
+        }
+      }

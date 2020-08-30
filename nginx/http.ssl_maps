@@ -1,0 +1,6 @@
+map $http_host $scheme_for_domain {
+        hostnames;
+
+        default "http";
+        clientpacer.com "httts";
+}

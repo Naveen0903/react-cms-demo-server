@@ -1,0 +1,3 @@
+if ($scheme_for_domain != $scheme) { 
+    return 301 $scheme_for_domain://$http_host$request_uri;
+}

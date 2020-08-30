@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+    backend:
+        env_file:
+            - ./prod.env
+    frontend:
+        env_file:
+            - ./prod.env
+
+    dashboard:
+        env_file:
+            - ./prod.env
+            
+    nginx:
+        env_file:
+            - ./prod.env
+        build:
+            args:
+                config_file: prod_nginx.conf    
+networks:
+    overlay:

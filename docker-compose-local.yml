@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+    backend:
+        env_file:
+            - ./local.env
+    frontend:
+        env_file:
+            - ./local.env
+
+    dashboard:
+        env_file:
+            - ./local.env
+            
+    nginx:
+        env_file:
+            - ./local.env
+        build:
+            args:
+                config_file: local_nginx.conf    
+networks:
+    overlay:
