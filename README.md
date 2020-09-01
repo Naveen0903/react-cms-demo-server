@@ -35,10 +35,10 @@ Apart from requirement mentioned in production, following need to be installed
 Steps to run the project:
 1. Install mogodb locally else obtain the mongodb connection URL from the mongo atlas server.
 2. In case of atlas server connection, following variables need to be set in env file.
-    MONGO_URL=<MONGO_URL>
-    NODE_ENV=production/development/local
-    WHITELISTED_URL=http://localhost;http://localhost:3000;<other url that is allowed access the backend API>
-    BACKEND_URL=http://localhost:5300/api
+    MONGO_URL=<MONGO_URL> <br />
+    NODE_ENV=production/development/local <br />
+    WHITELISTED_URL=http://localhost;http://localhost:3000;<other url that is allowed access the backend API> <br />
+    BACKEND_URL=http://localhost:5300/api <br />
 3. Env file name should be based on the environment.
   local.env -----> local mode.
   dev.env -------> development mode.
