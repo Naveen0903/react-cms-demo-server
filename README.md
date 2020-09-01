@@ -34,7 +34,7 @@ Apart from requirement mentioned in production, following need to be installed
 
 Steps to run the project:
 1. Install mogodb locally else obtain the mongodb connection URL from the mongo atlas server.
-2. In case of atlas server connection, following variables need to be set in env file.
+2. In case of atlas server connection, following variables need to be set in env file.<br />
     MONGO_URL=<MONGO_URL> <br />
     NODE_ENV=production/development/local <br />
     WHITELISTED_URL=http://localhost;http://localhost:3000;<other url that is allowed access the backend API> <br />
@@ -46,14 +46,14 @@ Steps to run the project:
 4. Mongodb URL and backend URL should also be set in next.config.js of frontend project because this project uses next.js framework which doesnt read env files.
 5. Finally shoot up the following commands in the terminal.
   
-for running project in local mode,
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-local build
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-local up
+for running project in local mode,<br />
+docker-compose -f docker-compose.yml -f docker-compose-local build <br />
+docker-compose -f docker-compose.yml -f docker-compose-local up <br />
 
-for running project in devolopment mode,
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-dev build
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-dev up
+for running project in devolopment mode,<br />
+docker-compose -f docker-compose.yml -f docker-compose-dev build<br />
+docker-compose -f docker-compose.yml -f docker-compose-dev up<br />
 
-for running project in production mode,
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-prod build
-ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-prod up
+for running project in production mode,<br />
+docker-compose -f docker-compose.yml -f docker-compose-prod build <br />
+docker-compose -f docker-compose.yml -f docker-compose-prod up <br />
