@@ -47,13 +47,13 @@ Steps to run the project:
 5. Finally shoot up the following commands in the terminal.
   
 for running project in local mode,<br />
-docker-compose -f docker-compose.yml -f docker-compose-local build <br />
-docker-compose -f docker-compose.yml -f docker-compose-local up <br />
+docker-compose -f docker-compose.yml -f docker-compose-local.yml build <br />
+docker-compose -f docker-compose.yml -f docker-compose-local.yml up <br />
 
 for running project in devolopment mode,<br />
-docker-compose -f docker-compose.yml -f docker-compose-dev build<br />
-docker-compose -f docker-compose.yml -f docker-compose-dev up<br />
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml build<br />
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml up<br />
 
 for running project in production mode,<br />
-docker-compose -f docker-compose.yml -f docker-compose-prod build <br />
-docker-compose -f docker-compose.yml -f docker-compose-prod up <br />
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml build <br />
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml up <br />
