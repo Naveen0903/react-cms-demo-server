@@ -33,27 +33,27 @@ Apart from requirement mentioned in production, following need to be installed
 - nginx
 
 Steps to run the project:
--> Install mogodb locally else obtain the mongodb connection URL from the mongo atlas server.
--> In case of atlas server connection, following variables need to be set in env file.
+1. Install mogodb locally else obtain the mongodb connection URL from the mongo atlas server.
+2. In case of atlas server connection, following variables need to be set in env file.
     MONGO_URL=<MONGO_URL>
     NODE_ENV=production/development/local
     WHITELISTED_URL=http://localhost;http://localhost:3000;<other url that is allowed access the backend API>
     BACKEND_URL=http://localhost:5300/api
--> env file name should be based on the environment.
+3. Env file name should be based on the environment.
   local.env -----> local mode.
   dev.env -------> development mode.
   prod.env ------> production mode.
--> Mongodb URL and backend URL should also be set in next.config.js of frontend project because this project uses next.js framework which doesnt read env files.
--> Finally shoot up the following commands in the terminal.
+4. Mongodb URL and backend URL should also be set in next.config.js of frontend project because this project uses next.js framework which doesnt read env files.
+5. Finally shoot up the following commands in the terminal.
   
-  for running project in local mode,
-  docker-compose -f docker-compose.yml -f docker-compose-local build
-  docker-compose -f docker-compose.yml -f docker-compose-local up
-  
-  for running project in devolopment mode,
-  docker-compose -f docker-compose.yml -f docker-compose-dev build
-  docker-compose -f docker-compose.yml -f docker-compose-dev up
-  
-  for running project in production mode,
-  docker-compose -f docker-compose.yml -f docker-compose-prod build
-  docker-compose -f docker-compose.yml -f docker-compose-prod up
+for running project in local mode,
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-local build
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-local up
+
+for running project in devolopment mode,
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-dev build
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-dev up
+
+for running project in production mode,
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-prod build
+ubuntu:~$docker-compose -f docker-compose.yml -f docker-compose-prod up
